@@ -15,6 +15,15 @@ app.get('/api/courses', (req, res) => {
     res.send([1, 2, 3]);
 });
 
+app.post('/api/courses', (req, res) => {
+    const course = {
+        id: course.length +1,
+        name: req.body.name
+    };
+    course.push(course);
+    res.push(course);
+})
+
 app.get('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) res.status(404).send('The course with the given ID was not found')
